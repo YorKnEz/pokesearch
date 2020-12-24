@@ -91,9 +91,9 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
   },
   separator: {
-    height: 1,
+    height: StyleSheet.hairlineWidth,
     width: '100%',
-    backgroundColor: 'lightgray',
+    backgroundColor: 'gray',
   }
 });
 

@@ -9,13 +9,32 @@ const Stack = createStackNavigator()
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions= {{
+          headerStyle: {
+            backgroundColor: '#00796B',
+          },
+          headerTintColor: '#fff'
+        }}
+      >
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Overview' }}
+          options={{
+            title: 'Home'
+          }}
         />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={({ route }) => ({
+            title: 'About ' + route.params.name,
+            headerTitleStyle: {
+              textTransform: 'capitalize'
+            }
+          })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
